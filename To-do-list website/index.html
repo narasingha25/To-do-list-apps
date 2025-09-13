@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animated To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <header class="app-header">
+        <h1>My Tasks</h1>
+        <p class="sub">
+          Consistency and discipline are the cornerstones of achievement.
+        </p>
+      </header>
+
+      <section class="add-area" aria-label="Add task">
+        <form id="taskForm" autocomplete="off">
+          <label for="taskInput" class="visually-hidden">Task</label>
+          <input
+            id="taskInput"
+            name="task"
+            type="text"
+            placeholder="Add a new task and press Enter"
+          />
+          <button type="submit" class="btn primary" aria-label="Add task">
+            Add
+          </button>
+        </form>
+
+        <div class="controls">
+          <div class="filters" role="tablist" aria-label="Filter tasks">
+            <button
+              class="filter active"
+              data-filter="all"
+              role="tab"
+              aria-selected="true"
+            >
+              All
+            </button>
+            <button
+              class="filter"
+              data-filter="active"
+              role="tab"
+              aria-selected="false"
+            >
+              Active
+            </button>
+            <button
+              class="filter"
+              data-filter="completed"
+              role="tab"
+              aria-selected="false"
+            >
+              Completed
+            </button>
+          </div>
+
+          <div class="bulk">
+            <button
+              id="clearCompleted"
+              class="btn"
+              aria-label="Clear completed tasks"
+            >
+              Clear completed
+            </button>
+            <button id="toggleAll" class="btn" aria-label="Toggle all tasks">
+              Toggle All
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="list-area" aria-live="polite">
+        <ul id="taskList" class="task-list" aria-label="Tasks"></ul>
+        <div id="emptyState" class="empty-state">
+          No tasks yet — add your first task ✨
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <div id="remaining" class="remaining">0 tasks left</div>
+        <div class="attribution">Built with ❤️ • Love</div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
